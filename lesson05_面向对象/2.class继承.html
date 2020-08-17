@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function Student(name) {
+            this.name = name;
+        }//函数也是对象
+
+        //给Student新增一个方法，prototype表示对象原型
+        Student.prototype.hello = function () {
+            alert('hello');
+        };
+
+        //ES6之后更加人性化
+        class student {
+
+            constructor(name) {
+                this.name = name;
+            }//构造器相当于Java中student()
+
+            hello() {
+                alert('hello');
+            }
+
+        }
+
+        var s = new Student('xiaoming');
+        var stu = new student('xiaowang');
+
+        //上述两种方法等效
+
+        class pupil extends student {
+            constructor(name, grade) {
+                super(name);
+                this.grade = grade;
+            }
+
+            hello() {
+                alert('pupil');
+            }
+        }
+
+        var pup = new pupil('xiaohong', 3);
+
+
+        /*__proto__原型
+        在JavaScript中，每个函数都有一个prototype属性，这个属性指向函数的原型对象
+        Js原型链，所有对象最终指向Object而Object指向仍是Object
+         */
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        //1.正常字符串使用单引号或者双引号包括
+        console.log('a');
+        console.log("a");
+
+        //2.转义字符
+        //  \'     \n      \t
+        //  \u4e2d --> 中   \u####  Unicode字符
+        //  Ascll字符   "\x41"
+
+        //3.多行字符串编写  tab上面
+        var msg = `
+        wo
+        123
+        321
+        1234567
+        `;
+
+        //4.模板字符串
+        var name = "orion";
+        var age = 17;
+        var message = `Hello ${name}`;//类似python格式化 得用反单引号
+        console.log(message);
+
+        //5.字符串长度
+        //str.length
+
+        //6.字符串的可变性--->不可变
+        var stu = "student";
+        console.log(stu[0]);
+        //stu[0] = 1;
+        console.log(stu[0]);
+
+        //7.大小写转换
+        console.log(stu.toUpperCase());
+        console.log(stu);
+        //注意这里是方法，而不是属性
+
+        //8.获取字符串内某个字符位置
+        stu.indexOf('t');
+
+        //9.截取字符串
+        console.log(stu.substring(0,3));//[)包含前面不包含后面，左闭右开
+        console.log(stu.substring(1));//从位置1直到末尾包括末尾
+    </script>
+</head>
+<body>
+
+</body>
+</html>

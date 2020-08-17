@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //java，javascript，c#...面向对象；javascript有些区别
+        /*
+        类：模板
+        对象：具体的实例
+        类是对象的抽象，对象是类的具体表现
+         */
+
+        var Student = {
+            name: "mingzi",
+            number: 2,
+            age: 17,
+            run: function () {
+                console.log(this.name + " run ...");
+            }
+        };
+
+        var xiaoming = {
+            name: "xiaoming",
+            number: 2018141511031
+        };
+
+        //xiaoming的原型对象是Student
+        xiaoming.__proto__ = Student;
+        //有点类似父类子类的继承的关系
+
+        var Bird = {
+            fly: function () {
+                console.log(this.name + " fly ...");
+            }
+        }
+        //xiaoming的原型对象变成了Bird，不再是Student
+        xiaoming.__proto__ = Bird;
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

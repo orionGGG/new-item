@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        /*
+        Java中的Iterator功能比较简单，并且只能单向移动：
+
+        (1) 使用方法iterator()要求容器返回一个Iterator。第一次调用Iterator的next()方法时，
+        它返回序列的第一个元素。注意：iterator()方法是java.lang.Iterable接口,被Collection继承。
+
+        (2) 使用next()获得序列中的下一个元素。
+
+        (3) 使用hasNext()检查序列中是否还有元素。
+
+        (4) 使用remove()将迭代器新返回的元素删除。
+         */
+
+        //迭代器可以轻松达到遍历的效果
+
+        //遍历数组
+        var arr = [3, 4, 5];
+        for (var x in arr)//for in 循环中x代指下标
+        {
+            console.log(x);
+        }
+
+
+        for (var x of arr)//for of 循环中x代指数组中元素
+        {
+            console.log(x);
+        }
+
+        //遍历Map
+        var map = new Map();
+        map.set(['tom', 7]);
+        map.set(['joe', 8]);
+        map.set(['jerry', 9]);
+        for (var x of map) {
+            console.log(x);
+        }
+
+        //遍历Set
+        var set = new Set([1, 2, 3]);
+        for (var x of set) {
+            console.log(x);
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

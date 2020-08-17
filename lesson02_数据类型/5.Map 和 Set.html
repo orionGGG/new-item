@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        //ES6
+        //Map:
+        //学生的成绩和学生的名字
+        //类似Java中的Map
+        var map = new Map([["wofule", 77], ["zed", 99]]);
+        map.set("johnny", {name: 'johnny', age: 23, sex: 'M'})
+        //Map是一个集合，里面可以使键值对也可以是对象(对象里面有多个键值对)
+        //Map可以说是对象的数组
+        var name = map.get("zed");//通过ket获得value
+        map.set('dami', 1234);//新增或修改
+        map.delete('zed');//删除
+        console.log(name);
+
+        //Set:无序不重复的集合
+        var set = new Set([3, 1, 1, 1, 1, 1]);//set可以给数组去重
+        console.log(set);
+        set.add(2);
+        set.delete(1);
+        console.log(set.has(3));//类似于java中content,是否包含某个元素
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

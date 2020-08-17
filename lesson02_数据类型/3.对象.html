@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        'use strict';
+
+        //JavaScript中所有的键(属性名)都是字符串，值可以是任意对象
+
+        //定义了一个person对象，以及他的两个属性
+        var person = {
+            name: "orion",
+            age: 17
+        }
+        /*
+        var 对象名 = {
+  (实例变量)  属性名: 属性值,
+            属性名: 属性值,
+            属性名: 属性值
+        }
+        */
+
+        //JS中对象，{....}表示一个对象，键值对描述属性 xxxx: xxxx
+        //多个属性之间使用逗号隔开，最后一个属性(可)不加逗号
+
+        //1.对象赋值
+        /*
+       person.name = "GJL"
+       就赋予属性值一个值
+       会改变
+         */
+
+        //2.使用一个不存在的对象属性,不会报错,undefined
+
+        //3.动态的删减属性，通过了delete删除对象的属性
+        /*
+        person.name
+        就删除了person对象的name属性
+         */
+
+        //4.动态的添加属性，直接给新的属性添加值即可
+        /*
+        person.new = "new"
+         */
+
+        //5.判断属性值是否在这个对象中  xxx in xxx
+        /*
+        'age' in person
+        true
+        继承 in 可以找到父类的方法
+        'toString' in person
+        true
+         */
+
+        //6.判断一个属性是否是这个对象自身拥有的 hasOwnProperty()
+        /*
+        对象自身的属性，方法
+        不包括父类的
+         */
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

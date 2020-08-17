@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict'
+
+        //在JavaScript中，var定义变量实际上是有作用域的
+        //在函数体中声明，则在函数体外无法使用(非要想实现，可以闭包)
+        function f1() {
+            var x = 1;
+            x++;
+        }
+
+        /*
+        x = x + 2; Uncaught ReferenceError: x is not defined
+        */
+        function f2() {
+            var x = 7;
+            x++;
+            console.log(x);
+        }
+
+        //如果两个函数使用了相同的变量名，只要在函数内部，就不冲突
+
+        function x1() {
+            var x = 1;
+
+            //内部函数可以访问外部函数的成员，反之不行，x2可以访问x1，x1不能访问x2
+            function x2() {
+                var y = x + 1;//2
+            }
+
+            /*
+            var z = y + 1; Uncaught ReferenceError: y is not defined
+             */
+
+        }
+
+        //JavaScript中函数查找变量从自身函数开始，由"内"向"外"查找，就近原则
+        function y1() {
+            var x = 1;
+
+            function y2() {
+                var x = 'gan';
+                console.log('inner' + x);// innergan
+            }
+
+            y2();
+            console.log('outer' + x);// outer1
+        }
+
+        //提升变量作用域
+        function z1() {
+            /*
+            js执行引擎，自动声明了y，但是不会给y赋值
+            变量定义在函数头部，不要乱放，便于代码维护
+             */
+
+            var x = 'x+' + y;
+            console.log(x);//x+undefined
+            var y = 'y';
+        }
+
+        //局部变量
+        var x = 1;
+
+        function j1() {
+            console.log(x);
+        }
+
+        j1();
+        console.log(x);
+
+        //全局对象window
+        var x = 'gagaga';
+        alert(x);
+        window.alert(x);//默认所有的全局变量都会绑定在window下
+
+        //alert()函数本身也是window变量
+
+        /*
+        JavaScript实际上只有一个全局作用域，任何变量(函数也可以视作变量)
+        假设没有在函数作用范围内找到，就会向外查找，如果在全局作用域没有找到就会报错
+
+         */
+
+        //由于所有的全局变量都会绑定在window上，所以当不同的js文件声明了相同的全局变量就会产生冲突
+
+        //解决办法：
+        var person = {};
+        person.name = 'wuhu';
+        person.walk = function () {
+            console.log('zouzouzou');
+        }
+        //把自己的代码全部放入自己定义的唯一空间中，而不依托window
+
+        //局部作用域
+        function aa1() {
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
+
+        aa1();//i 出了for作用域还可以使用
+
+        //let关键字，解决局部作用域冲突问题
+        function aa2() {
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
+
+        aa2();//i 出了for作用域还可以使用
+        //故建议使用let定义局部作用域变量
+
+
+        //常量const
+        //ES6之前，只用大写字母命名的变量就是常量，建议不要修改这样的值，这是一个约定，你想改可以改
+        //在ES6中引入常量关键字const
+        const PI = '3.14';//只读变量
+        console.log(PI);
+        //PI = '1';就会报错
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

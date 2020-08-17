@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        'use strict';
+
+        //方法就是把函数放在对象里面，对象只有两个东西，属性和方法
+        function getName() {
+            console.log(this.name);
+        }
+
+        var person = {
+            name: 'GJL',
+            birth: 2000,
+            //方法
+            age: function () {
+                var now = new Date().getFullYear();
+                return now - this.birth;//this--->指向自己的属性
+            },
+            a: getName//这也是方法，通过调用对象外的函数,this默认指向调用它的对象
+        }
+
+        getName.apply(person, []);//this指向了person，参数为空
+        //apply相当于反向的this，它可以调用对象
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

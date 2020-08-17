@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        window(重要)
+        window代表浏览器窗口
+
+        window.innerHeight;
+        windoe.outerHeight;
+        */
+
+        /*
+        Navigator(不建议使用)
+        Navigator封装了浏览器的信息
+        一般不使用navigator对象，因为会被人为修改使用
+         */
+
+        /*
+        screen
+        screen代表全屏幕属性
+        screen.width
+        screen.height
+         */
+
+        /*
+        location(重要)
+        location代表当前页面的URL信息
+        host: "www.baidu.com"-->代表主机
+        href: "https://www.baidu.com/"-->当前指向位置
+        protocol: "https:"-->协议
+        reload: ƒ reload()-->刷新
+        设置新地址(跳转网页)
+        location.assign('xxx.com')
+         */
+
+        /*
+        document
+        document 代表当前页面， HTML DOM文档树
+        获取具体的文档树节点
+        获取cookie
+        document.cookie
+        cookie用来保存用户信息，用户隐私等等
+        服务器端可以设置 cookie: httpOnly来保证安全
+         */
+
+        /*
+        history
+        history代表浏览器的历史记录
+        history.back()后退
+        history.forward()前进
+         */
+
+    </script>
+</head>
+<body>
+
+<dl id="app">
+    <dt>Java</dt>
+    <dd>JavaEE</dd>
+    <dd>JavaSE</dd>
+</dl>
+<script>
+
+    var dl = document.getElementById('app');
+</script>
+
+
+</body>
+</html>
